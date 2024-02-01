@@ -6,17 +6,16 @@
 
 (defvar flowmark-syntax-coloring nil)
 (setq flowmark-syntax-coloring
-      '(("\\\\\s*\(\(.*\)\)\s*" . font-lock-comment-face)
-	("\\(\\\\\\(?:call\\|def\\(?:\.free\\)?\\)\\)\(\\(\\(?:[^,@]\\|@,\\|@@\\)+\\)"
+      '(("\\\\\s*\n\s*" . font-lock-comment-face)
+	("\\\\((\\(?:[\n]\\|.\\)*))" . font-lock-comment-face)
+	("\\(\\\\\\(?:call\\|def\\(?:\.\\(?:free\\|macro\\|keyword\\)\\)?\\)\\)\(\\(\\(?:[^,@()]\\|@,\\|@@\\|@(\\|@)\\)+\\)"
 	 (1 font-lock-keyword-face)
 	 (2 font-lock-function-name-face))
-	("\\(\\\\\\(?:halt\\|debug\.list_names\\|init\.macro\\|copy\\|move\\|del\\(?:\.\\(?:free\\|all\\)\\)?\\|recite\.\\(?:reset\\|n?char\\|next_piece\\|to_gap\\|to_pattern\\)\\|next\.\\(?:piece\\|char\\|line\\)\\|if\\(?:eq\\|ne\\)\\(?:\.\\(?:int\\|float\\)\\)?\\)\\)"
+	("\\(\\\\\\(?:halt\\|debug\.list_names\\|init\.macro\\|copy\\|move\\|del\\(?:\.\\(?:free\\|all\\)\\)?\\|recite\.\\(?:reset\\|n?char\\|next_piece\\|to_gap\\|to_pattern\\)\\|next\.\\(?:piece\\|char\\|line\\)\\|if\\(?:eq\\|ne\\)\\(?:\.\\(?:int\\|float\\)\\)?\\|out\\|error\\|warn\\)\\)"
 	 (1 font-lock-keyword-face))
 	("\\(\\\\\\(?:[^@(]\\|@(\\|@@\\)+\\)\("
 	 (1 font-lock-function-name-face))
-	("<[^>]*>" . font-lock-variable-name-face)
-	("\\\\\s*\n\s*"
-	 (0 font-lock-comment-face))))
+	("<[^>]*>" . font-lock-variable-name-face)))
 
 (define-derived-mode flowmark-mode fundamental-mode "Flowmark"
   "Major mode for Flowmark"
