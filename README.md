@@ -1,12 +1,12 @@
-# weave-mode.el
-Emacs major mode for Weave
+# flowmark-mode.el
+Emacs major mode for Flowmark
 
 ## Install
 
-Download `weave-mode.el` to any directory of your choice and put this in your `.emacs` file:
+Download `flowmark-mode.el` to any directory of your choice and put this in your `.emacs` file:
 
 ``` elisp
 (add-to-list 'load-path 'PATH-TO-YOUR-ELISP-FILE-DIR)
-(require 'weave-mode)
-(add-to-list 'auto-mode-alist '("\\.w\\'" . weave-mode))
+(require 'flowmark-mode)
+(add-to-list 'auto-mode-alist '("\\.w\\'" . flowmark-mode))
 ```
