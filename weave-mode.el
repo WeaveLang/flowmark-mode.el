@@ -1,11 +1,11 @@
-;; weave-mode.el
-;; Major mode for Weave.
+;; flowmark-mode.el
+;; Major mode for Flowmark
 ;; (c) 2024 Zahktïn Làhm
 ;;
 ;; This file is not part of GNU Emacs.
 
-(defvar weave-syntax-coloring nil)
-(setq weave-syntax-coloring
+(defvar flowmark-syntax-coloring nil)
+(setq flowmark-syntax-coloring
       '(("\\\\\s*\n\s*" . font-lock-comment-face)
 	("\\\\((\\(?:[\n]\\|.\\)*))" . font-lock-comment-face)
 	("\\(\\\\\\(?:call\\|import\\|path\\|def\\(?:\.\\(?:free\\|macro\\|keyword\\)\\)?\\)\\)\(\\(\\(?:[^,@()]\\|@,\\|@@\\|@(\\|@)\\)+\\)"
@@ -17,8 +17,8 @@
 	 (1 font-lock-function-name-face))
 	("<[^>]*>" . font-lock-variable-name-face)))
 
-(define-derived-mode weave-mode fundamental-mode "Weave"
-  "Major mode for Weave"
-  (setq font-lock-defaults '((weave-syntax-coloring))))
+(define-derived-mode flowmark-mode fundamental-mode "Flowmark"
+  "Major mode for Flowmark"
+  (setq font-lock-defaults '((flowmark-syntax-coloring))))
 
-(provide 'weave-mode)
+(provide 'flowmark-mode)
